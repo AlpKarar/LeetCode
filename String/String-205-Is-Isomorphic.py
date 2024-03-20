@@ -15,3 +15,5 @@ class Solution:
                 t_visited.add(t[i])
         
         return True
+    
+# Beats 91.05%
