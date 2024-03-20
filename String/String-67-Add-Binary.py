@@ -22,3 +22,5 @@ class Solution:
             result = str(rem) + result
 
         return result
+    
+# Beats 53.61%
