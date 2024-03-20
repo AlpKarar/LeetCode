@@ -14,3 +14,5 @@ class Solution:
                 y -= 1
         
         return (x, y) == (0, 0)
+
+# Beats 65.68%
