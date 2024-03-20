@@ -25,3 +25,5 @@ class Solution:
         helper(root, "")
 
         return result
+    
+# Beats 60.94%
