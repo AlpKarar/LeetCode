@@ -7,13 +7,9 @@ class Solution:
         i = 0
 
         while i < len(arr):
-            if arr[i] == 0:
-                j = len(arr) - 1
-
-                while j > i:
-                    arr[j] = arr[j - 1]
-                    j -= 1
-                
+            if arr[i] == 0 and i + 1 < len(arr):
+                arr[i + 2:] = arr[i + 1:-1]
+                arr[i + 1] = 0
                 i += 1
             
             i += 1
