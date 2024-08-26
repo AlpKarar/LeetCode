@@ -9,20 +9,20 @@ class Solution:
         res = 0
 
         for num in range(low, high + 1):
-            num_str = str(num)
-            has_odd_length = True
-            half = len(num_str) // 2
+            temp = num
+            sum_arr = [0]
+            i = 0
 
-            if has_odd_length and num_str[:half] == num_str[half + 1:]:
-                continue
+            while temp > 0:
+                digit = temp % 10
+                sum_arr.append(sum_arr[-1] + digit)
+                temp //= 10
+                i += 1
+            
+            sum_arr = sum_arr[1:]
+            isEven = i % 2 == 0
 
-            if len(num_str) % 2 == 0:
-                has_odd_length = False
-        
-            half1_sum = sum([int(digit) for digit in num_str[:half]])
-            half2_sum = sum([int(digit) for digit in num_str[half + 1 if has_odd_length else half:]])
-
-            if half1_sum == half2_sum:
+            if isEven and sum_arr[i // 2 - 1] == sum_arr[-1] - sum_arr[i // 2 - 1]:
                 res += 1
         
         return res
